@@ -13,22 +13,32 @@ We use TensorFlow to build the CNN model and leverage data augmentation techniqu
 The CNN model has the following structure:
 
 ```
-Model: "Model With TF Augmentation"
+Model: "Model With Augmented Images Input"
 _________________________________________________________________
-Layer (type)                Output Shape              Param #
+ Layer (type)                Output Shape              Param #   
 =================================================================
-data_augmenter (Sequential)  (None, 180, 180, 3)       0
-Input_Rescaling (Rescaling)  (None, 180, 180, 3)       0
-Conv2DH-1 (Conv2D)          (None, 180, 180, 16)      448
-MaxPoolH-1 (MaxPooling2D)   (None, 90, 90, 16)        0
-Conv2DH-2 (Conv2D)          (None, 90, 90, 32)        4640
-MaxPoolH-2 (MaxPooling2D)   (None, 45, 45, 32)        0
-Conv2DH-3 (Conv2D)          (None, 45, 45, 64)        18496
-MaxPoolH-3 (MaxPooling2D)   (None, 22, 22, 64)        0
-DropOut-4 (Dropout)         (None, 22, 22, 64)        0
-Flatten-5 (Flatten)         (None, 30976)             0
-DenseH-6 (Dense)            (None, 128)               3965056
-Output (Dense)              (None, 9)                 1161
+ Input_Rescaling (Rescaling)  (None, 180, 180, 3)      0         
+                                                                 
+ Conv2DH-1 (Conv2D)          (None, 180, 180, 16)      448       
+                                                                 
+ MaxPoolH-1 (MaxPooling2D)   (None, 90, 90, 16)        0         
+                                                                 
+ Conv2DH-2 (Conv2D)          (None, 90, 90, 32)        4640      
+                                                                 
+ MaxPoolH-2 (MaxPooling2D)   (None, 45, 45, 32)        0         
+                                                                 
+ Conv2DH-3 (Conv2D)          (None, 45, 45, 64)        18496     
+                                                                 
+ MaxPoolH-3 (MaxPooling2D)   (None, 22, 22, 64)        0         
+                                                                 
+ Flatten-5 (Flatten)         (None, 30976)             0         
+                                                                 
+ DenseH-6 (Dense)            (None, 128)               3965056   
+                                                                 
+ DropOut-4 (Dropout)         (None, 128)               0         
+                                                                 
+ Output (Dense)              (None, 9)                 1161      
+                                                                 
 =================================================================
 Total params: 3,989,801
 Trainable params: 3,989,801
@@ -61,10 +71,6 @@ Contributions are welcome! Feel free to open issues, submit pull requests, or pr
 
 ## License 📄
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments 🙏
-
-We'd like to acknowledge the contributions of the entire team behind this project and the developers of TensorFlow and Augmentor for their powerful tools and resources.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 If you have any questions or feedback, please don't hesitate to reach out.
